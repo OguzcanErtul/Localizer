@@ -165,6 +165,9 @@
   <data name="Responsive design" xml:space="preserve">
     <value>Duyarlı Tasarım</value>
   </data>
+  <data name="Return to Home" xml:space="preserve">
+    <value>Anasyfaya Dön</value>
+  </data>
   <data name="Sales Data" xml:space="preserve">
     <value>Satış Verisi</value>
   </data>
