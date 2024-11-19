@@ -41,6 +41,7 @@ ASP.NET Core ile hazırlanan Localizer projesi, bir web uygulamasını kolayca �
 ![image](https://github.com/user-attachments/assets/82e4d4a3-9e6b-48ed-b828-85f13f9f23ea)
 
 ### Hakkımızda (Türkçe)
+![image](https://github.com/user-attachments/assets/82d154d4-0681-45f6-b2a0-7e3a78faf5d0)
 
 ### Hakkımızda (İngilizce)
 ![image](https://github.com/user-attachments/assets/eb6a16f5-dc5b-4d35-b623-53969bcc0df3)
