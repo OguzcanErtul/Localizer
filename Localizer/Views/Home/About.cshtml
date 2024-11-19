@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<style>
+    .about-section {
+        background: linear-gradient(to bottom, #f4f9fd, #ffffff);
+        padding: 50px 0;
+    }
+
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    .btn-primary {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            background-color: #224abe;
+            border-color: #224abe;
+        }
+</style>
+
+
+<div class="about-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">@Localizer["About Us"]</h1>
+            <p class="lead">@Localizer["This application demonstrates the use of localization with ASP.NET Core. It allows you to easily create multilingual web applications."]</p>
+            <p>@Localizer["With our Localizer project, you can manage language switching and content localization dynamically."]</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">@Localizer["Features"]</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">@Localizer["Multi-language support"]</li>
+                            <li class="list-group-item">@Localizer["Dynamic content localization"]</li>
+                            <li class="list-group-item">@Localizer["Graph integration with Chart.js"]</li>
+                            <li class="list-group-item">@Localizer["Responsive design"]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card border-0 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">@Localizer["Technologies"]</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ASP.NET Core</li>
+                            <li class="list-group-item">Bootstrap</li>
+                            <li class="list-group-item">Chart.js</li>
+                            <li class="list-group-item">SCSS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="/" class="btn btn-primary btn-lg">
+                @Localizer["Return to Home"]
+            </a>
+        </div>
+    </div>
+</div>

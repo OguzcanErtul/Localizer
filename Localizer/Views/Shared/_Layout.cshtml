@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Localizer</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Localizer.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(to bottom, #4e73df, #224abe);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+
+        .dropdown-menu {
+            background-color: #343a40; 
+            border: none; 
+        }
+
+            .dropdown-menu .dropdown-item {
+                color: #ffffff; 
+            }
+
+                .dropdown-menu .dropdown-item:hover {
+                    background-color: #495057; 
+                    color: #ffffff; 
+                }
+
+        .navbar-dark .dropdown-toggle {
+            color: #f8f9fa !important;
+            background-color: #212529; 
+        }
+
+            .navbar-dark .dropdown-toggle:hover {
+                background-color: #343a40; 
+            }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Localizer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">@Localizer["About Us"]</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="btn btn-dark dropdown-toggle d-flex align-items-center" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-globe me-2" style="color: #f8f9fa;"></i>
+                                <span class="text-white">@Localizer["Languages"]</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <button class="dropdown-item" value="tr" onclick="changeLanguage('tr')">
+                                        <span class="flag-icon flag-icon-tr me-2"></span>
+                                        @Localizer["Turkish"]
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item" value="en" onclick="changeLanguage('en')">
+                                        <span class="flag-icon flag-icon-us me-2"></span>
+                                        @Localizer["English"]
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>@Localizer["Welcome to Localizer"]</h1>
+            <p>@Localizer["Easily localize your application with ASP.NET Core"]</p>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Localizer 
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function changeLanguage(selectedCulture) {
+             
+            document.cookie = ".AspNetCore.Culture=c=" + selectedCulture + "|uic=" + selectedCulture + ";path=/";
+            
+            location.reload();
+        }
+
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿
+<div class="container py-5" style="background-color: #f4f9fd; border-radius: 8px; padding: 20px;">
+    <h2 class="text-center mb-4">@Localizer["Product Details"]</h2>
+
+    
+    <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>@Localizer["Product_Name"]</th>
+                <th>@Localizer["Price"]</th>
+                <th>@Localizer["Quantity Sold"]</th>
+            </tr>
+        </thead>
+        <tbody style="center">
+            <tr>
+                <td>@Localizer["Table"]</td>
+                <td>$150</td>
+                <td>120</td>
+            </tr>
+            <tr>
+                <td>@Localizer["Refrigerator"]</td>
+                <td>$1500</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>@Localizer["chandelier"]</td>
+                <td>$350</td>
+                <td>150</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <div class="mt-5">
+        <h3 class="text-center mb-3">@Localizer["Sales Data"]</h3>
+        <canvas id="salesChart"></canvas>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const salesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['@Localizer["Table"]', '@Localizer["Refrigerator"]', '@Localizer["chandelier"]'],
+            datasets: [{
+                label: '@Localizer["Quantity Sold"]',
+                data: [120, 200, 150],
+                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                borderColor: ['#2e59d9', '#17a673', '#2c9faf'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
